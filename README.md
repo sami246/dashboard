@@ -7,4 +7,4 @@ Key Features:
 Key Lessons:
 - File Structure
         - Index.jsx file to put all exports into one file in components/page folder for ease of import in another file
-- 
+-  npm install --legacy-peers-deps
