@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 import App from './App';
-// import { ContextProvider } from './contexts/ContextProvider';
+import { ContextProvider } from './contexts/ContextProvider';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    // Wrap the whole app with context provider to be able to use state
+    <ContextProvider>
+        <App />
+    </ContextProvider>,
+    document.getElementById('root')
+);
