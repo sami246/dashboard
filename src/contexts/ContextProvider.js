@@ -12,11 +12,25 @@ const initialState = {
 
 export const ContextProvider = ({ children }) => {
     const [activeMenu, setActiveMenu] = useState(true);
+    const [isClicked, setIsClicked] = useState(initialState);
+    const [screenSize, setScreenSize] = useState(undefined)
+
+    const handleClick = (clicked) => {
+        // Open up initial state object with ... and then only change key the was clicked to true
+        setIsClicked({ ...initialState, [clicked]:true});
+    }
 
     return (
     // Whatever is passed through as value will be passed through
     // all of the components inside the whole application
-    <StateContext.Provider value={{activeMenu, setActiveMenu}}>
+    <StateContext.Provider value={{
+        activeMenu,
+        setActiveMenu,
+        isClicked,
+        setIsClicked,
+        handleClick,
+        screenSize,
+        setScreenSize}}>
             {/* Have to pass through children, returning underlying
              component behind the context*/}
             {children}
