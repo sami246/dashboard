@@ -7,8 +7,7 @@ import { links } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Sidebar = () => {
-  const {activeMenu, setActiveMenu, screenSize} = useStateContext();
-  const currentColor = 'green';
+  const {activeMenu, setActiveMenu, screenSize, currentColor} = useStateContext();
 
   const handleClosedSideBar = () => {
     if(activeMenu && screenSize <= 900) {

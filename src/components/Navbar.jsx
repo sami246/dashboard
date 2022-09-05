@@ -22,7 +22,7 @@ const NavButton = ({title, customFunc, icon, color, dotColor}) => (
 
 
 const Navbar = () => {
-const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, setScreenSize, screenSize } = useStateContext();
+const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, setScreenSize, screenSize, currentColor } = useStateContext();
 
 // Second argument is a depencedncy array that means the useEffect is only put into affect once the variale is changed
 // e.g. empty would mean it runs only at the opening of page, screenSize would mean when screen size changes however constantly checking screen size would be heavy for the application so no do
@@ -45,17 +45,17 @@ useEffect(() => {
 }, [screenSize])
 
   return (
-    <div className='flex justify-between p-2 md:mx-6 relative'>
-      <NavButton title='Menu' customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} color="blue" icon={<AiOutlineMenu />}/>
+    <div className='flex justify-between p-2 md:mx-6 relative '>
+      <NavButton title='Menu' customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} color={currentColor} icon={<AiOutlineMenu />}/>
     
       <div className='flex'>
-          <NavButton title='Cart' customFunc={() => handleClick('cart')} color="blue" icon={<FiShoppingCart />}/>
+          <NavButton title='Cart' customFunc={() => handleClick('cart')} color={currentColor} icon={<FiShoppingCart />}/>
       </div>
       <div className='flex'>
-          <NavButton title='Chat' customFunc={() => handleClick('chat')} color="blue" dotColor='#03C9D7' icon={<BsChatLeft />}/>
+          <NavButton title='Chat' customFunc={() => handleClick('chat')} color={currentColor} dotColor='#03C9D7' icon={<BsChatLeft />}/>
       </div>
       <div className='flex'>
-          <NavButton title='Notifications' customFunc={() => handleClick('notification')} color="blue" icon={<RiNotification3Line />}/>
+          <NavButton title='Notifications' customFunc={() => handleClick('notification')} color={currentColor} icon={<RiNotification3Line />}/>
       </div>
       <TooltipComponent content='Profile' position='BottomCenter'>
         <div className='flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg' onClick={() => handleClick('userProfile')}>

@@ -11,9 +11,29 @@ const initialState = {
 }
 
 export const ContextProvider = ({ children }) => {
+    //  Value in () is what initialised with
     const [activeMenu, setActiveMenu] = useState(true);
     const [isClicked, setIsClicked] = useState(initialState);
     const [screenSize, setScreenSize] = useState(undefined)
+    const [currentColor, setCurrentColor] = useState('#03C9D7')
+    const [currentMode, setCurrentMode] = useState('Light')
+    const [themeSettings, setThemeSettings] = useState(false)
+
+    const setMode = (e) => {
+        // Change context API
+        setCurrentMode(e.target.value);
+        //  Update local storage so same color is activated next time
+        localStorage.setItem('themeMode', e.target.value);
+        setThemeSettings(false)
+    }
+
+    const setColor = (color) => {
+        // Change context API
+        setCurrentColor(color);
+        //  Update local storage so same color is activated next time
+        localStorage.setItem('colorMode', color);
+        setThemeSettings(false)
+    }
 
     const handleClick = (clicked) => {
         // Open up initial state object with ... and then only change key the was clicked to true
@@ -30,7 +50,13 @@ export const ContextProvider = ({ children }) => {
         setIsClicked,
         handleClick,
         screenSize,
-        setScreenSize}}>
+        setScreenSize,
+        setMode,
+        setColor,
+        currentMode,
+        currentColor,
+        themeSettings,
+        setThemeSettings}}>
             {/* Have to pass through children, returning underlying
              component behind the context*/}
             {children}
