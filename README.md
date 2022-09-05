@@ -6,6 +6,7 @@ Key Features:
 - Syncfusion
         - Multiple different types of tables with minimal code but amazing features
         - Sorting, Filtering, Editing, all made easy with one or two lines of code
+- Deployed using Netlify
 
 
 Key Lessons:
@@ -28,3 +29,5 @@ Key Lessons:
 - SyncFusion
         - "<Inject service={[Legend, Category, StackingColumnSeries, Tooltip]}/>" services allow you to specify what you want your chart to have as 'extra features'
         - Normally works by having a singular Directive wrapped by a plural Directive
+- Deploy
+        - Have to run npm run build to create optimised production build
