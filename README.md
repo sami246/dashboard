@@ -4,6 +4,8 @@ Key Features:
 - Tailwind CSS
 - React Context API
 - Syncfusion
+        - Multiple different types of tables with minimal code but amazing features
+        - Sorting, Filtering, Editing, all made easy with one or two lines of code
 
 
 Key Lessons:
@@ -24,4 +26,5 @@ Key Lessons:
 - TailWind CSS
         - Don't style dynamically e.g `text-${item.text}` would not work
 - SyncFusion
-        - "<Inject service={[Legend, Category, StackingColumnSeries, Tooltip]}/>" services allow you to specify what you want your chart to have
+        - "<Inject service={[Legend, Category, StackingColumnSeries, Tooltip]}/>" services allow you to specify what you want your chart to have as 'extra features'
+        - Normally works by having a singular Directive wrapped by a plural Directive
