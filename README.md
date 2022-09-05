@@ -31,3 +31,4 @@ Key Lessons:
         - Normally works by having a singular Directive wrapped by a plural Directive
 - Deploy
         - Have to run npm run build to create optimised production build
+        - Drag and drop into Netlify, going to Domain Settings to change site name
