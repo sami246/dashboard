@@ -1,3 +1,5 @@
+Deplyed Site: https://sami-dashboard.netlify.app/
+
 Built and Deployed a React Admin Dashboard App With Theming, Tables, Charts, Calendar, Kanban and More
 
 Key Features:
